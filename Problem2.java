@@ -14,8 +14,9 @@ public class Problem2 {
 
         System.out.println("h is " + h);
         System.out.println("k is " + k);
+      
     }
-
+  
     static class Rational extends Number implements Comparable<Rational> {
         // Data fields for numerator and denominator
         private long[] r = new long[2];
