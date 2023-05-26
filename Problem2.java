@@ -10,7 +10,7 @@ public class Problem2 {
         int c = input.nextInt();
 
         Rational h = new Rational(-b, 2 * a);
-        Rational k = new Rational((a * h.getNumerator() * h.getNumerator() + b * h.getNumerator() + c) * 4 * a * a, 4 * a * a);
+        Rational k = new Rational((a * h.getNumerator() * h.getNumerator() + b * h.getNumerator() * 2 * a + c * 4 * a), 4 * a);
 
         System.out.println("h is " + h);
         System.out.println("k is " + k);
