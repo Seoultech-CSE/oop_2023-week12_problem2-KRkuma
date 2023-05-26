@@ -11,7 +11,7 @@ public class Problem2 {
 
         Rational h = new Rational(-b, 2 * a);
         Rational k = new Rational((a * h.getNumerator() * h.getNumerator() + b * h.getNumerator() + c) * 4 * a * a, 4 * a * a);
-        
+
         System.out.println("h is " + h);
         System.out.println("k is " + k);
     }
@@ -55,6 +55,36 @@ public class Problem2 {
         /**Return denominator*/
         public long getDenominator() {
             return r[1];
+        }
+
+        /**Add a rational number to this rational*/
+        public Rational add(Rational secondNewRational) {
+            long n = r[0]*secondNewRational.getDenominator() +
+                    r[1]*secondNewRational.getNumerator();
+            long d = r[1]*secondNewRational.getDenominator();
+            return new Rational(n, d);
+        }
+
+        /**Subtract a rational number from this rational*/
+        public Rational subtract(Rational secondNewRational) {
+            long n = r[0]*secondNewRational.getDenominator()
+                    - r[1]*secondNewRational.getNumerator();
+            long d = r[1]*secondNewRational.getDenominator();
+            return new Rational(n, d);
+        }
+
+        /**Multiply a rational number to this rational*/
+        public Rational multiply(Rational secondNewRational) {
+            long n = r[0]*secondNewRational.getNumerator();
+            long d = r[1]*secondNewRational.getDenominator();
+            return new Rational(n, d);
+        }
+
+        /**Divide a rational number from this rational*/
+        public Rational divide(Rational secondNewRational) {
+            long n = r[0]*secondNewRational.getDenominator();
+            long d = r[1]*secondNewRational.r[0];
+            return new Rational(n, d);
         }
 
         @Override
