@@ -10,11 +10,10 @@ public class Problem2 {
         int c = input.nextInt();
 
         Rational h = new Rational(-b, 2 * a);
-        Rational k = new Rational((a * h.getNumerator() * h.getNumerator() + b * h.getNumerator() * 2 * a + c * 4 * a), 4 * a);
+        Rational k = new Rational((4 * a * c - b * b) * 1L, 4 * a);
 
         System.out.println("h is " + h);
         System.out.println("k is " + k);
-      
     }
   
     static class Rational extends Number implements Comparable<Rational> {
